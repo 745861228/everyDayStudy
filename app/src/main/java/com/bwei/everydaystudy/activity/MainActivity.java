@@ -1,14 +1,14 @@
-package com.bwei.everydaystudy;
+package com.bwei.everydaystudy.activity;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseActivity;
 import com.bwei.everydaystudy.factory.FragmentFactory;
 import com.bwei.everydaystudy.view.LazyViewPager;

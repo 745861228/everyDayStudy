@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red" >
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/common_background_color"
+        android:orientation="vertical" >
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_title_height" >
+
+                <ImageView
+                    android:id="@+id/setting_back"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="20dp"
+                    android:src="@mipmap/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:gravity="center"
+                    android:text="设置"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/activity_text_size" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/setting_linear_margin_normal"
+            android:background="@drawable/setting_linear_border"
+            android:divider="@drawable/shape_divider_linear"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/setting_linear_margin_horizontal"
+            android:showDividers="middle" >
+
+            <com.zhy.autolayout.AutoLinearLayout
+                style="@style/setting_item_container_style"
+                android:paddingRight="8dp" >
+
+                <TextView
+                    style="@style/setting_item_textview_style"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="仅wifi观看" />
+
+                <ToggleButton
+                    android:id="@+id/setting_only_wifi_look"
+                    style="@style/togglebtn_width_height" />
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/setting_linear_margin_big" android:background="@drawable/setting_linear_border"
+            android:divider="@drawable/shape_divider_linear"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/setting_linear_margin_horizontal"
+            android:showDividers="middle" >
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_marginTop="30px"
+                android:id="@+id/setting_clear"
+                style="@style/setting_item_container_style"
+                android:clickable="true" >
+
+                <TextView
+                    style="@style/setting_item_textview_style"
+                    android:text="清理缓存" />
+
+                <TextView
+                    android:id="@+id/setting_textview_cachesize"
+                    style="@style/setting_item_textview_style"
+                    android:layout_alignParentRight="true"
+                    android:text="3.12M"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/setting_text_size_info" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_marginTop="30px"
+                android:id="@+id/setting_update"
+                style="@style/setting_item_container_style"
+                android:clickable="true" >
+
+                <TextView
+                    style="@style/setting_item_textview_style"
+                    android:text="检查更新" />
+
+                <TextView
+                    android:id="@+id/tv_current_version"
+                    style="@style/setting_item_textview_style"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/setting_text_size_info" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_marginTop="30px"
+                android:id="@+id/setting_about"
+                style="@style/setting_item_container_style"
+                android:clickable="true" >
+                <TextView
+                    style="@style/setting_item_textview_style"
+                    android:text="关于我们" />
+
+                <ImageView
+                    style="@style/setting_item_textview_style"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/myrig" />
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+    >
+</com.zhy.autolayout.AutoFrameLayout>
