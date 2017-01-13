@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.bwei.everydaystudy.view.LazyViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:id="@+id/main_lazyViewPager"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="fill_parent"
+        android:layout_height="120px"
+        android:layout_gravity="bottom"
+        android:background="@mipmap/bottom"
+        android:gravity="center_vertical"
+        android:paddingTop="4px"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="0dp"
+            android:checked="true"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:button="@null"
+            android:drawableTop="@drawable/home_pager"
+            android:gravity="center"
+            android:paddingTop="8px"
+            android:text="首页"
+            android:textColor="@color/bottom_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_category"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:button="@null"
+            android:drawableTop="@drawable/course_pager"
+            android:gravity="center"
+            android:paddingTop="8px"
+            android:text="课程分类"
+            android:textColor="@color/bottom_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_quanzi"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:button="@null"
+            android:drawableTop="@drawable/quanzi_pager"
+            android:gravity="center"
+            android:paddingTop="8px"
+            android:text="圈子"
+            android:textColor="@color/bottom_text_color" />
+
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="#f5f5f5"
+            android:button="@null"
+            android:drawableTop="@drawable/my_pager"
+            android:gravity="center"
+            android:paddingTop="8px"
+            android:text="我的"
+            android:textColor="@color/bottom_text_color" />
+    </RadioGroup>
+
+
+</com.zhy.autolayout.AutoLinearLayout>
