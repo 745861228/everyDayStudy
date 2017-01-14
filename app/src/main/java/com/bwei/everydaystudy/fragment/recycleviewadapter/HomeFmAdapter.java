@@ -1,11 +1,10 @@
-package com.bwei.everydaystudy.recycleviewadapter;
+package com.bwei.everydaystudy.fragment.recycleviewadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseHolder;

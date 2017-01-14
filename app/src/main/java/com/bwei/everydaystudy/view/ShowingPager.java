@@ -1,10 +1,10 @@
 package com.bwei.everydaystudy.view;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
@@ -56,10 +56,9 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
 
 
         //添加title布局
-        titleView = View.inflate(getContext(), R.layout.common_title,null);
+        titleView = LayoutInflater.from(getContext()).inflate(R.layout.common_title,null);
         titleLayout.addView(titleView,params);
         setTitleView(titleView);
-
 
         /**
          * 添加成功视图
@@ -71,10 +70,6 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
             showFrameLayout.removeAllViews();
             showFrameLayout.addView(successView,params);
         }
-
-
-
-
         showPage();
     }
 
@@ -106,6 +101,10 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
         showFrameLayout.setVisibility(currentState == STATE_LOAD_SUCCESS ? View.VISIBLE : View.GONE);
     }
 
+
+    public void goneTitleListener(){
+        titleLayout.setVisibility(GONE);
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()){

@@ -51,7 +51,8 @@
         android:id="@+id/title_center_group"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="3">
+        android:layout_weight="3"
+        android:gravity="center">
 
         <!--带文字提示的title-->
         <TextView
@@ -75,13 +76,15 @@
 
         <!--tabLayout类型的title-->
         <android.support.design.widget.TabLayout
-             android:id="@+id/title_TabLayout"
-            android:layout_width="match_parent"
+            android:id="@+id/title_TabLayout"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:tabIndicatorColor="#ffffff"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="#ffffff"
-            app:tabTextColor="#ffffff" />
+            app:tabTextColor="#ffffff"
+            android:layout_centerVertical="true"
+            android:visibility="gone"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -107,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:padding="25px"
-            android:src="@mipmap/search_s"
+            android:src="@mipmap/search"
             android:visibility="gone" />
 
         <!--链接图标-->
