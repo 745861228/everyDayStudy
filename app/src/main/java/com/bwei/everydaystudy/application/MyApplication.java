@@ -5,6 +5,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Process;
 
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
 /**
@@ -20,6 +22,10 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //配置qqkey值
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        UMShareAPI.get(this);
         //配置autoLayout
         AutoLayoutConifg.getInstance().useDeviceSize();
         context = getApplicationContext();

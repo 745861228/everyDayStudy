@@ -11,6 +11,8 @@ import android.view.View;
 
 import com.bwei.everydaystudy.application.MyApplication;
 
+import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
+
 
 public class CommonUtils {
     private static SharedPreferences sharedPreferences;
@@ -67,7 +69,31 @@ public class CommonUtils {
         float density = getResources().getDisplayMetrics().density;
         return (int) (px / density + 0.5);
     }
+    //存入sharedPreferences对象中
+    public static void saveSp(String key, String values) {
+        if (sharedPreferences == null) {
+            sharedPreferences = getContext().getSharedPreferences(TAG, Context.MODE_PRIVATE);
+        }
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString(key, values);
+        edit.commit();
+    }
 
+    //取sharedPreferences中的值
+    public static String getSp(String key) {
+        if (sharedPreferences == null) {
+            sharedPreferences = getContext().getSharedPreferences(TAG, getContext().MODE_PRIVATE);
+        }
+        return sharedPreferences.getString(key, "");
+    }
+    public static void removeSp(String flag){
+        if (sharedPreferences == null) {
+            sharedPreferences = getContext().getSharedPreferences(TAG, getContext().MODE_PRIVATE);
+        }
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.remove(flag);
+        edit.commit();
+    }
     // 判断当前线程是否在主线程中
     public static boolean isRunInMainThread() {
         //先获取主线程的线程号然后和当前线程号比较

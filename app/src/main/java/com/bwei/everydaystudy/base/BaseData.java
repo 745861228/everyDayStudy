@@ -231,5 +231,4 @@ public abstract class BaseData {
 
     }
 
-
 }

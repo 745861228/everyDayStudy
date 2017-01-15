@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_title_height" >
+
+            <ImageView
+                android:id="@+id/course_back"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="20dp"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:text="我的课程"
+                android:textColor="@color/white"
+                android:textSize="@dimen/activity_text_size" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp" >
+
+        <RadioGroup
+            android:id="@+id/rg_mycourse_studying"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_mycourse_studying"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_mycourse_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="正在学"
+                android:textColor="@color/color_radiobutton_selector" />
+
+            <RadioButton
+                android:id="@+id/rb_mycourse_studied"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radiobutton_mycourse_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="已学完"
+                android:textColor="@color/color_radiobutton_selector" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/common_background_color" />
+    </com.zhy.autolayout.AutoFrameLayout>
+
+    <com.zhy.autolayout.AutoFrameLayout
+        android:id="@+id/framelayout_mycourse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.zhy.autolayout.AutoFrameLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>
