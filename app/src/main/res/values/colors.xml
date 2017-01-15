@@ -13,4 +13,5 @@
     <color name="black">#333333</color>
     <color name="color_radiobutton_selector">#F95F53</color>
     <color name="common_text_color">#BDBDBD</color>
+    <color name="black">#000000</color>
 </resources>
