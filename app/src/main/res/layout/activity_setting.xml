@@ -92,7 +92,7 @@
                     android:id="@+id/setting_textview_cachesize"
                     style="@style/setting_item_textview_style"
                     android:layout_alignParentRight="true"
-                    android:text="3.12M"
+                    android:text="3.12Mb"
                     android:textColor="@color/gray"
                     android:textSize="@dimen/setting_text_size_info" />
             </com.zhy.autolayout.AutoRelativeLayout>
@@ -104,6 +104,7 @@
                 android:clickable="true" >
 
                 <TextView
+                    android:id="@+id/vrtsion_tv"
                     style="@style/setting_item_textview_style"
                     android:text="检查更新" />
 
@@ -113,6 +114,15 @@
                     android:layout_alignParentRight="true"
                     android:textColor="@color/gray"
                     android:textSize="@dimen/setting_text_size_info" />
+                <ImageView
+                    android:id="@+id/red_dynamic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/red_dynamic"
+                    android:visibility="gone"
+                    android:layout_toRightOf="@id/vrtsion_tv"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20px"/>
             </com.zhy.autolayout.AutoRelativeLayout>
 
             <com.zhy.autolayout.AutoRelativeLayout

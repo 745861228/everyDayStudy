@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +16,10 @@ import android.widget.TextView;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.activity.CourseActivity;
 import com.bwei.everydaystudy.activity.LoginActivity;
+import com.bwei.everydaystudy.activity.MessageActivity;
 import com.bwei.everydaystudy.activity.SettingActivity;
 import com.bwei.everydaystudy.activity.TicklingActivity;
+import com.bwei.everydaystudy.utils.CommonUtils;
 
 /**
  * author by LiKe on 2017/1/10.
@@ -33,6 +36,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout my_msg;
     private RelativeLayout my_feedback;
     private RelativeLayout my_setting;
+    private  RelativeLayout my_log_ll_show;
 
     @Nullable
     @Override
@@ -56,6 +60,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         my_feedback.setOnClickListener(this);
         my_setting = (RelativeLayout) view.findViewById(R.id.my_setting);//设置
         my_setting.setOnClickListener(this);
+        my_log_ll_show = (RelativeLayout) view.findViewById(R.id.my_log_ll_show);
         return view;
     }
 
@@ -63,7 +68,25 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 123 && resultCode == 111) {
+            String screen_name = data.getStringExtra("screen_name");
+            String profile_image_url = data.getStringExtra("profile_image_url");
+            QQLogin(screen_name, profile_image_url);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
+    private void QQLogin(String screen_name, String profile_image_url) {
+        if (!TextUtils.isEmpty(profile_image_url)) {
+            my_log_ll_show.setVisibility(View.VISIBLE);
+            CommonUtils.saveSp("profile_image_url", profile_image_url);
+            CommonUtils.saveSp("screen_name", screen_name);
+        } else {
+            my_log_ll_show.setVisibility(View.GONE);
+        }
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId())
@@ -77,6 +100,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
             case R.id.my_myclass:  /*我的课程*/
                 Intent intent1=new Intent(getActivity(), CourseActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.my_msg:/*我的消息*/
+                Intent intent4=new Intent(getActivity(), MessageActivity.class);
+                startActivity(intent4);
                 break;
             case R.id.my_feedback: /*意见反馈*/
                 Intent intent2 = new Intent(getActivity(), TicklingActivity.class);
