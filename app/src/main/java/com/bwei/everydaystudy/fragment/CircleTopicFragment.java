@@ -56,15 +56,13 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
         if (!NetUtils.isHaveNet()) {
             isOnline = false;
         }
-
     }
 
 
     @Override
     public View setBaseSuccessView() {
-        view = View.inflate(getActivity(), R.layout.circletopicfm_item, null);
+        view = View.inflate(getActivity(), R.layout.circle_topicfm_item, null);
         initView();
-
         return view;
     }
 

@@ -42,7 +42,7 @@ public class CircleAttentionFragment extends BaseFragment {
 
     @Override
     public View setBaseSuccessView() {
-        view = View.inflate(getActivity(), R.layout.circletopicfm_item, null);
+        view = View.inflate(getActivity(), R.layout.circle_topicfm_item, null);
         circleTopicFm_banner = (Banner) view.findViewById(R.id.circleTopicFm_banner);
         return view;
     }

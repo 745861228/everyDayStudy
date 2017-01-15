@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import com.bwei.everydaystudy.application.MyApplication;
 import com.bwei.everydaystudy.manager.HttpMangerUtils;
 import com.bwei.everydaystudy.utils.CommonUtils;
+import com.bwei.everydaystudy.utils.LogUtils;
 import com.bwei.everydaystudy.utils.Md5;
 import com.bwei.everydaystudy.utils.ToastUtil;
 import com.bwei.everydaystudy.view.ShowingPager;

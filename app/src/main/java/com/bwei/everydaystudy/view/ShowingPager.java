@@ -20,7 +20,7 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
 
     /**
      * 定义状态
-     */
+    */
     public static final int STATE_LOADING = 1;
     public static final int STATE_LOAD_ERROR = 2;
     public static final int STATE_LOAD_SUCCESS = 3;
