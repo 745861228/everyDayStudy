@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bwei.everydaystudy.R;
-import com.bwei.everydaystudy.bean.HomeBean;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.base.BaseFragment;
+import com.bwei.everydaystudy.bean.HomeBean;
 import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
-import com.bwei.everydaystudy.recycleviewadapter.HomeFmAdapter;
+import com.bwei.everydaystudy.recyclerviewadapter.HomeFmAdapter;
 import com.bwei.everydaystudy.utils.NetUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
 import com.google.gson.Gson;
@@ -22,9 +22,6 @@ import com.liaoinstan.springview.container.AliFooter;
 import com.liaoinstan.springview.container.AliHeader;
 import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
-
-import static com.bwei.everydaystudy.R.id.home_recyclerview;
-import static com.bwei.everydaystudy.R.id.springview;
 
 
 /**
@@ -79,12 +76,6 @@ public class HomeFragment extends BaseFragment {
         title_home.setVisibility(View.VISIBLE);
         title_search.setVisibility(View.VISIBLE);
     }
-
-
-    /**
-     * 创建标题栏视图
-     * @return
-     */
 
 
     /**

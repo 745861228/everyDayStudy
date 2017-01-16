@@ -4,16 +4,18 @@ package com.bwei.everydaystudy.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseFragment;
-import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
+import com.bwei.everydaystudy.factory.FragmentFactory;
 import com.bwei.everydaystudy.utils.CommonUtils;
-import com.bwei.everydaystudy.utils.ToastUtil;
 import com.bwei.everydaystudy.view.ShowingPager;
 
 /**
@@ -26,10 +28,11 @@ public class CircleFragment extends BaseFragment {
     private TabLayout title_tabLayout;
     private ImageView title_search;
     private ViewPager circleOutViewPager;
-    private String[] titles = {"话题","热门","关注"};
+    private String[] titles = {"话题", "热门", "关注"};
 
     /**
      * 成功视图
+     *
      * @return
      */
     @Override
@@ -41,6 +44,7 @@ public class CircleFragment extends BaseFragment {
 
     /**
      * 标题视图
+     *
      * @param v
      */
     @Override
@@ -59,10 +63,68 @@ public class CircleFragment extends BaseFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_SUCCESS);
         initView();
     }
 
     private void initView() {
+        LinearLayout linearLayout = (LinearLayout) title_tabLayout.getChildAt(0);
+        linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+        linearLayout.setDividerPadding(15);
+        linearLayout.setDividerDrawable(ContextCompat.getDrawable(getActivity(),
+                R.drawable.layout_divider_vertical));
+        //设置viewpager适配器
+        circleOutViewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return FragmentFactory.getFragment(titles[position]);
+            }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return titles[position];
+            }
+
+            @Override
+            public int getCount() {
+                return titles.length;
+            }
+        });
+        //设置tabLayout和viewPager关联
+        title_tabLayout.setupWithViewPager(circleOutViewPager);
+
+        title_tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                circleOutViewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        circleOutViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                title_tabLayout.getTabAt(position).select();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 }

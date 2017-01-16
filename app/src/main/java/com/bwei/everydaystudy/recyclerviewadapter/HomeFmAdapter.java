@@ -1,11 +1,10 @@
-package com.bwei.everydaystudy.recycleviewadapter;
+package com.bwei.everydaystudy.recyclerviewadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseHolder;
@@ -18,9 +17,8 @@ import com.bwei.everydaystudy.recycleviewholder.PopularcourseHolder;
 import com.bwei.everydaystudy.recycleviewholder.RecommendHolder;
 import com.zhy.autolayout.AutoLinearLayout;
 
-
 /**
- * Created by qwe on 2017/1/12.
+ * author by LiKe on 2017/1/14.
  */
 
 public class HomeFmAdapter extends RecyclerView.Adapter<BaseHolder> {

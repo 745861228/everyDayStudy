@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="#f95d51" >
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/my_forget_pwd_iv_back"
+            android:layout_width="40dp"
+            android:layout_height="fill_parent">
+            <ImageView
+                android:id="@+id/alter_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/back" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="找回密码"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/setting_linear_border"
+        android:divider="@drawable/shape_divider_linear"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        >
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/my_forget_pwd_phone_num"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:digits="1234567890."
+                android:drawableLeft="@mipmap/phone"
+                android:drawablePadding="15dp"
+                android:drawableStart="@mipmap/phone"
+                android:gravity="left|center_vertical"
+                android:hint="手机号码"
+                android:paddingLeft="5dp"
+                android:singleLine="true"
+                android:textColorHint="#cbcbcb"
+                android:textColor="#333333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/my_forget_pwd_get_captcha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginRight="11dp"
+                android:gravity="center"
+                android:background="@mipmap/loginmumb"
+                android:text="发送验证码"
+                android:textColor="#43e9c0"
+                android:textSize="13sp" />
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="9dp"
+
+            android:background="#DEDEDE"/>
+
+
+        <EditText
+            android:id="@+id/my_forget_pwd_enter_captcha"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:drawablePadding="15dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/numb"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableStart="@mipmap/numb"
+            android:gravity="left|center_vertical"
+            android:hint="6位验证码"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textColorHint="#cbcbcb"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="9dp"
+
+            android:background="#DEDEDE"/>
+
+        <EditText
+            android:id="@+id/my_forget_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawablePadding="15dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/code"
+
+            android:drawableStart="@mipmap/code"
+            android:gravity="left|center_vertical"
+            android:hint="设置密码"
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:password="true"
+            android:textColorHint="#cbcbcb"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp" >
+
+        <TextView
+            android:id="@+id/my_forget_pwd_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="right"
+
+            android:layout_marginTop="11dp"
+
+            android:textColor="#f95d51"
+            android:textSize="13sp"
+            />
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginTop="30dp" >
+
+        <Button
+            android:id="@+id/my_forget_pwd_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="56dp"
+            android:background="@mipmap/logobutton"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="提交"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/my_forget_pwd_mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/my_forget_pwd_submit"
+            android:layout_marginTop="10dp"
+            android:text="邮箱注册 ？点击找回"
+            android:textColor="#999999"
+            android:textSize="13sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>
