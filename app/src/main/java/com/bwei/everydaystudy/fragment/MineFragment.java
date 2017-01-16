@@ -113,7 +113,6 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent intent3 = new Intent(getActivity(), SettingActivity.class);
                 startActivity(intent3);
                 break;
-
         }
     }
 }

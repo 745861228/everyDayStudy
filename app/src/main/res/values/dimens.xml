@@ -11,4 +11,7 @@
     <dimen name="setting_linear_margin_big">14dp</dimen>
     <dimen name="setting_text_size_info">12sp</dimen>
     <dimen name="dialog_text_size">13sp</dimen>
+    
+    <dimen name="circle_cirtop_title">30px</dimen>
+    <dimen name="circle_cirtop_content">23px</dimen>
 </resources>

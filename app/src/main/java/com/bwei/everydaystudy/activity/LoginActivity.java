@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.bean.LoginMessageBean;
+import com.bwei.everydaystudy.utils.CommonUtils;
 import com.bwei.everydaystudy.utils.LogUtils;
 import com.google.gson.Gson;
 import com.umeng.socialize.UMAuthListener;
@@ -143,7 +144,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void setResulttError(int state) {
 
             }
-        }.postData(true,false,"http://www.meirixue.com/","api.php?c=login&a=index",hashMap,BaseData.NOTIME);
+        }.postData(false,true,"http://www.meirixue.com/","api.php?c=login&a=index",hashMap,BaseData.NOTIME);
     }
 
     /**
