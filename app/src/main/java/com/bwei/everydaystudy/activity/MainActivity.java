@@ -1,14 +1,15 @@
-package com.bwei.everydaystudy;
+package com.bwei.everydaystudy.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseActivity;
 import com.bwei.everydaystudy.factory.FragmentFactory;
 import com.bwei.everydaystudy.view.LazyViewPager;
@@ -18,6 +19,7 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
     private LazyViewPager main_lazyViewPager;
     private RadioGroup rb;
     private long mExitTime = 0;
+    private String[] titles = {"首页","课程分类","圈子","我的"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,7 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
         main_lazyViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return FragmentFactory.getFragment(position);
+                return FragmentFactory.getFragment(titles[position]);
             }
 
             @Override
@@ -109,6 +111,18 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == 111) {
+            String screen_name = data.getStringExtra("screen_name");
+            String profile_image_url = data.getStringExtra("profile_image_url");
+           // QQLogin(screen_name, profile_image_url);
+        }else if (requestCode == 123 && resultCode == 101){
+
+        }
     }
 
 }

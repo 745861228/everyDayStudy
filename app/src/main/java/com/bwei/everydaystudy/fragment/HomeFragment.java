@@ -3,16 +3,22 @@ package com.bwei.everydaystudy.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
+
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.base.BaseFragment;
+import com.bwei.everydaystudy.bean.HomeBean;
 import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
+import com.bwei.everydaystudy.recyclerviewadapter.HomeFmAdapter;
 import com.bwei.everydaystudy.utils.NetUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
-
+import com.google.gson.Gson;
+import com.liaoinstan.springview.widget.SpringView;
 
 
 /**
@@ -22,8 +28,10 @@ import com.bwei.everydaystudy.view.ShowingPager;
 public class HomeFragment extends BaseFragment {
 
 
-    private TextView textView;
     private boolean isOnline = true;
+    private View view;
+    private SpringView springview;
+    private RecyclerView home_recyclerview;
 
     @Override
     public void onAttach(Context context) {
@@ -42,21 +50,26 @@ public class HomeFragment extends BaseFragment {
      */
     @Override
     public View setBaseSuccessView() {
-        textView = new TextView(getActivity());
-        textView.setText("********************************************few");
-        return textView;
+        // 加载成功试图
+        View view = initView();
+        return view;
+    }
+
+    private View initView() {
+        view = LayoutInflater.from(getContext()).inflate(R.layout.home_fragment_item,null);
+        springview = (SpringView) view.findViewById(R.id.springview);
+        home_recyclerview = (RecyclerView) view.findViewById(R.id.home_recyclerview);
+        home_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        return view;
     }
 
     @Override
     public void setBaseTitleView(View v) {
-
+        ImageView title_home = (ImageView) v.findViewById(R.id.title_home);
+        ImageView title_search = (ImageView) v.findViewById(R.id.title_search);
+        title_home.setVisibility(View.VISIBLE);
+        title_search.setVisibility(View.VISIBLE);
     }
-
-
-    /**
-     * 创建标题栏视图
-     * @return
-     */
 
 
     /**
@@ -71,14 +84,13 @@ public class HomeFragment extends BaseFragment {
         } else {
             showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_ERROR);
         }
-
-        //响应重置按钮监听事件
         showingPager.setIResetShowingPageListener(new IResetShowingPageListener() {
             @Override
             public void onResetClick(View view) {
                 initDatas();
             }
         });
+
     }
 
     /**
@@ -88,15 +100,16 @@ public class HomeFragment extends BaseFragment {
         new BaseData() {
             @Override
             public void setResultData(String data) {
-                textView.setText(data);
                 showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_SUCCESS);
-
+                Gson gson = new Gson();
+                HomeBean homeBean = gson.fromJson(data, HomeBean.class);
+                home_recyclerview.setAdapter(new HomeFmAdapter(getActivity(),homeBean));
             }
 
             @Override
             public void setResulttError(int state) {
                 showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_ERROR);
             }
-        }.getData("http://www.baidu.com", "http://www.baidu.com", BaseData.NORMALTIME);
+        }.getData("http://www.meirixue.com", "http://www.meirixue.com/api.php?a=indexv9&c=index", BaseData.NORMALTIME);
     }
 }

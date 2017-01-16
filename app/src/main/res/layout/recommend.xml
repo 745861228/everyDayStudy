@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20px"
+    android:orientation="vertical">
+
+    <!--分割线-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="18px"
+        android:layout_marginLeft="20px"
+        android:background="#44000000" />
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/recommend" />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <GridView
+        android:id="@+id/recommend_gv"
+        android:layout_width="match_parent"
+        android:numColumns="2"
+        android:horizontalSpacing="20px"
+        android:layout_marginLeft="20px"
+        android:layout_height="270px"
+      ></GridView>
+
+
+    <ListView
+        android:id="@+id/recommend_lv"
+        android:layout_marginLeft="20px"
+        android:layout_width="match_parent"
+        android:layout_height="600px"></ListView>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

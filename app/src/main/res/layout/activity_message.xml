@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_message"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:orientation="vertical"
+    tools:context="com.bwei.everydaystudy.activity.MessageActivity">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:background="#f95d51" >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/setting_back"
+            android:layout_width="88px"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:src="@mipmap/back" />
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:gravity="center"
+            android:text="消息中心"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_marginTop="14px"
+        android:id="@+id/message_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="88px" >
+        <ImageView
+            android:id="@+id/message_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="38px"
+            android:src="@mipmap/message_comment" />
+        <TextView
+            android:id="@+id/message_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/message_image"
+            android:layout_centerVertical="true"
+            android:text="评论"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/message_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="24px"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5px"
+        android:layout_marginLeft="38px"
+        android:background="#c9c9c9"
+        />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_marginTop="14px"
+        android:id="@+id/message_setting2"
+        android:layout_width="fill_parent"
+        android:layout_height="88px" >
+        <ImageView
+            android:id="@+id/message_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="38px"
+            android:src="@mipmap/message_praise" />
+        <TextView
+            android:id="@+id/message_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/message_image2"
+            android:layout_centerVertical="true"
+            android:text="赞"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/message_item2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="24px"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5px"
+        android:layout_marginLeft="38px"
+        android:background="#c9c9c9"
+        />
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_marginTop="14px"
+        android:id="@+id/message_setting3"
+        android:layout_width="fill_parent"
+        android:layout_height="88px" >
+        <ImageView
+            android:id="@+id/message_image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="38px"
+            android:src="@mipmap/message_notify" />
+        <TextView
+            android:id="@+id/message_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:layout_toRightOf="@id/message_image3"
+            android:layout_centerVertical="true"
+            android:text="通知"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/my_iv10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="24px"
+            android:src="@mipmap/myrig" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5px"
+        android:layout_marginLeft="38px"
+        android:background="#c9c9c9"
+        />
+
+    <ImageView
+        android:layout_marginTop="16px"
+        android:layout_width="500px"
+        android:layout_height="500px"
+        android:src="@mipmap/file"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/imageView" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="主人，门铃没有响过"
+          android:textSize="@dimen/activity_text_size"
+          android:textColor="@color/common_text_color"
+          android:gravity="center_horizontal"
+          />
+
+</com.zhy.autolayout.AutoLinearLayout>
