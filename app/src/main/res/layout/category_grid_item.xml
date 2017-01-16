@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:id="@+id/rb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20px"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="21px"
+        android:layout_weight="1"
+        android:background="@mipmap/label"
+        android:button="@null"
+        android:gravity="center"
+        android:text="美妆美发"
+        android:textColor="@color/text"
+        android:textSize="30px" />
+</com.zhy.autolayout.AutoLinearLayout>
