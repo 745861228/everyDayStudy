@@ -26,13 +26,10 @@ public abstract class BaseShowingActivity extends AutoLayoutActivity {
             public View setSuccessView() {
                 return setBaseSuccessView();
             }
-
             @Override
             public void setTitleView(View titleView) {
-
+                    setBaseTitleView(titleView);
             }
-
-
         };
 
         setContentView(showingPager);
@@ -58,8 +55,8 @@ public abstract class BaseShowingActivity extends AutoLayoutActivity {
     public abstract View setBaseSuccessView();
 
     //创建标题视图
-    public abstract View setBaseTitleView();
+    public abstract void setBaseTitleView(View titleView);
 
     //加载数据
-    public abstract View onLoad();
+    public abstract void onLoad();
 }

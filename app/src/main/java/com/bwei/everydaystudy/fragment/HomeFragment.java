@@ -18,6 +18,9 @@ import com.bwei.everydaystudy.recycleviewadapter.HomeFmAdapter;
 import com.bwei.everydaystudy.utils.NetUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
 import com.google.gson.Gson;
+import com.liaoinstan.springview.container.AliFooter;
+import com.liaoinstan.springview.container.AliHeader;
+import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
 
 import static com.bwei.everydaystudy.R.id.home_recyclerview;
@@ -63,6 +66,9 @@ public class HomeFragment extends BaseFragment {
         springview = (SpringView) view.findViewById(R.id.springview);
         home_recyclerview = (RecyclerView) view.findViewById(R.id.home_recyclerview);
         home_recyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
+        springview.setHeader(new AliHeader(getActivity()));
+        springview.setFooter(new AliFooter(getActivity()));
+        springview.setType(SpringView.Type.FOLLOW);
         return view;
     }
 

@@ -1,7 +1,9 @@
 package com.bwei.everydaystudy.manager;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.youth.banner.loader.ImageLoader;
@@ -11,9 +13,16 @@ import com.youth.banner.loader.ImageLoader;
  */
 
 public class GlideImageLoader extends ImageLoader {
+    private final int size;
+
+    public GlideImageLoader(int size) {
+        this.size = size;
+    }
+
     @Override
-    public void displayImage(Context context, Object path, ImageView imageView) {
+    public void displayImage(final Context context, Object path, ImageView imageView) {
         //Glide 加载图片简单用法
         Glide.with(context).load(path).into(imageView);
+
     }
 }
