@@ -14,8 +14,6 @@ import android.widget.Toast;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.bean.LoginMessageBean;
-import com.bwei.everydaystudy.utils.CommonUtils;
-import com.bwei.everydaystudy.utils.LogUtils;
 import com.google.gson.Gson;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
@@ -45,11 +43,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
+
     /**
      * 初始化空间
      */
@@ -98,15 +98,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.my_btn_weibo_sign_up:
-
                 break;
             //登录
             case R.id.my_btn_sign_in:
-                if (TextUtils.isEmpty(getUserNumber())){
+                if (TextUtils.isEmpty(getUserNumber())) {
                     toastMesage("账号不能为空");
-                }else if (TextUtils.isEmpty(getUserPwd())){
+                } else if (TextUtils.isEmpty(getUserPwd())) {
                     toastMesage("密码不能为空");
-                }else {
+                } else {
                     //登录
                     loginToServic();
                 }
@@ -118,23 +117,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * 登录服务器
      */
     private void loginToServic() {
-        HashMap<String,String> hashMap = new HashMap<>();
-        hashMap.put("userName",getUserNumber());
-        hashMap.put("password",getUserPwd());
-        hashMap.put("dosubmit","1");
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("userName", getUserNumber());
+        hashMap.put("password", getUserPwd());
+        hashMap.put("dosubmit", "1");
         new BaseData() {
             @Override
             public void setResultData(String data) {
                 Gson gson = new Gson();
                 LoginMessageBean loginMessageBean = gson.fromJson(data, LoginMessageBean.class);
-                LogUtils.i("loginMessageBean",loginMessageBean.toString());
-                if (loginMessageBean.getStatus() == 200){
+                if (loginMessageBean.getStatus() == 200) {
                     toastMesage("登录成功！");
-                    finish();
-                }else if (loginMessageBean.getStatus() == 201){
+                    Intent intent= new Intent();
+                    intent.putExtra("user_name",loginMessageBean.getData().getUser_name());
+                    intent.putExtra("user_big_log",loginMessageBean.getData().getUser_big_log());
+                    setResult(101,intent);
+                } else if (loginMessageBean.getStatus() == 201) {
                     my_sign_toast.setVisibility(View.VISIBLE);
                     my_sign_toast.setText("密码不正确");
-                }else if (loginMessageBean.getStatus() == 202){
+                } else if (loginMessageBean.getStatus() == 202) {
                     my_sign_toast.setVisibility(View.VISIBLE);
                     my_sign_toast.setText("账号不存在");
                 }
@@ -144,7 +145,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void setResulttError(int state) {
 
             }
-        }.postData(false,true,"http://www.meirixue.com/","api.php?c=login&a=index",hashMap,BaseData.NOTIME);
+        }.postData(false, true, "http://www.meirixue.com/", "api.php?c=login&a=index", hashMap, BaseData.NOTIME);
     }
 
     /**
@@ -164,10 +165,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             setResult(111, xinxi);
             finish();
         }
+
         @Override
         public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
             Toast.makeText(getApplicationContext(), "失败", Toast.LENGTH_SHORT).show();
         }
+
         @Override
         public void onCancel(SHARE_MEDIA share_media, int i) {
             Toast.makeText(getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
@@ -176,23 +179,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     /**
      * 获取账号
+     *
      * @return
      */
-    public String getUserNumber(){
+    public String getUserNumber() {
         return my_et_sign_in_account.getText().toString().trim();
     }
 
     /**
      * 获取用户密码
+     *
      * @return
      */
-    public String getUserPwd(){
+    public String getUserPwd() {
         return my_et_sign_in_pwd.getText().toString().trim();
     }
+
     /**
      * 吐司
      */
-    public void toastMesage(String toastString){
+    public void toastMesage(String toastString) {
         Toast.makeText(LoginActivity.this, toastString, Toast.LENGTH_SHORT).show();
     }
 }

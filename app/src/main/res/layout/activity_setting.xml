@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="20dp"
+                    android:paddingRight="40px"
                     android:src="@mipmap/back" />
 
                 <TextView
@@ -55,7 +55,7 @@
 
             <com.zhy.autolayout.AutoLinearLayout
                 style="@style/setting_item_container_style"
-                android:paddingRight="8dp" >
+                android:paddingRight="16px" >
 
                 <TextView
                     style="@style/setting_item_textview_style"

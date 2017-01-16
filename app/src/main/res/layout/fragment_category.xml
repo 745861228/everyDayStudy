@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    android:orientation="vertical">
+
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/fenleis"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/heart" />
+
+
+        <ImageView
+            android:id="@+id/off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/heart_s" />
+
+        <TextView
+            android:id="@+id/classify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="热门分类"
+            android:textColor="#f95d51"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+   <GridView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/fenlei"
+       android:numColumns="3"
+       ></GridView>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/hots"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/coffee" />
+
+
+        <ImageView
+            android:id="@+id/hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/coffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/coffee_s" />
+
+        <TextView
+            android:id="@+id/t_hod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="多彩生活"
+            android:textColor="@color/black"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/g_hot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="18px"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:id="@+id/rg_search_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:id="@+id/btn_search_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:id="@+id/btn_search_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="美食"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:id="@+id/btn_search_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="婚姻讲堂"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_search_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:id="@+id/btn_search_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="形象塑造"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:id="@+id/btn_search_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="文艺艺术"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:id="@+id/btn_search_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="街坊"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/interest"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/diamond" />
+
+
+        <ImageView
+            android:id="@+id/diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/iv_diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/diamond_s" />
+
+        <TextView
+            android:id="@+id/t_diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="兴趣爱好"
+            android:textColor="@color/black"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/g_interest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="18px"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="全部"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="美食"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="婚姻讲堂"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="形象塑造"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="文艺艺术"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="街坊"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/portfolio"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/portfolio" />
+
+
+        <ImageView
+            android:id="@+id/offs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/ons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/heart_s" />
+
+        <TextView
+            android:id="@+id/t_portfolio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="职场提示"
+            android:textColor="@color/black"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/L_portfolio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="18px"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="美妆美发"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="服饰"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="美甲"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="星座"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="摄影"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="舞蹈"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/hat"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/hat" />
+
+
+        <ImageView
+            android:id="@+id/hats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/hatss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/hat_s" />
+
+        <TextView
+            android:id="@+id/t_hat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="考试考级"
+            android:textColor="@color/black"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/l_hat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="18px"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="美妆美发"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="服饰"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="美甲"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="星座"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="摄影"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="舞蹈"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/language"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginBottom="20px"
+        android:background="#fff"
+        android:padding="25px"
+        android:paddingBottom="15px">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/language" />
+
+
+        <ImageView
+            android:id="@+id/languagess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/down" />
+
+        <ImageView
+            android:id="@+id/languages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:src="@mipmap/language_s" />
+
+        <TextView
+            android:id="@+id/t_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="112px"
+            android:text="语言学习"
+            android:textColor="@color/black"
+            android:textSize="32px" />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/l_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="18px"
+        android:layout_marginRight="18px"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:visibility="gone"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="美妆美发"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="服饰"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+
+                android:text="美甲"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20px"
+            android:layout_marginTop="20px"
+            android:divider="@drawable/shape_divider_linear_pub_comment"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="星座"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="摄影"
+                android:textColor="@color/text"
+                android:textSize="30px" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@mipmap/label"
+                android:button="@null"
+                android:gravity="center"
+                android:text="舞蹈"
+
+                android:textColor="@color/text"
+                android:textSize="30px" />
+        </RadioGroup>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoLinearLayout>

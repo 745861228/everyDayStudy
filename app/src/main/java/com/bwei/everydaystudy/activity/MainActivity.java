@@ -1,5 +1,6 @@
 package com.bwei.everydaystudy.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -110,6 +111,18 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == 111) {
+            String screen_name = data.getStringExtra("screen_name");
+            String profile_image_url = data.getStringExtra("profile_image_url");
+           // QQLogin(screen_name, profile_image_url);
+        }else if (requestCode == 123 && resultCode == 101){
+
+        }
     }
 
 }
