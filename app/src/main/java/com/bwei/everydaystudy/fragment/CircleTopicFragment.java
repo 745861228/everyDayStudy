@@ -16,7 +16,9 @@ import com.bwei.everydaystudy.base.BaseFragment;
 import com.bwei.everydaystudy.bean.CircleAttentionBean;
 import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
 import com.bwei.everydaystudy.manager.GlideImageLoader;
+import com.bwei.everydaystudy.utils.CommonUtils;
 import com.bwei.everydaystudy.utils.DividerItemDecoration;
+import com.bwei.everydaystudy.utils.LogUtils;
 import com.bwei.everydaystudy.utils.NetUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
 
@@ -173,8 +175,9 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
                 addAttention_img.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        int adapterPosition = holder.getAdapterPosition();
-
+                        //获取cookie
+                        String cookie = CommonUtils.getString("cookie");
+                       // LogUtils.i("cookie*****",cookie);
                     }
                 });
             }

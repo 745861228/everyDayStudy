@@ -2,37 +2,35 @@ package com.bwei.everydaystudy.factory;
 
 import android.support.v4.app.Fragment;
 
-import com.bwei.everydaystudy.fragment.CategoryFragment;
-import com.bwei.everydaystudy.fragment.CircleAttentionFragment;
-import com.bwei.everydaystudy.fragment.CircleFragment;
-import com.bwei.everydaystudy.fragment.CircleHotFragment;
-import com.bwei.everydaystudy.fragment.CircleTopicFragment;
-import com.bwei.everydaystudy.fragment.HomeFragment;
+import com.bwei.everydaystudy.bean.HotTitlesBean;
 import com.bwei.everydaystudy.fragment.HotTitlesFragment;
-import com.bwei.everydaystudy.fragment.MineFragment;
 
 import java.util.HashMap;
 
-import static android.R.attr.fragment;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 /**
  * Created by LiKe on 2016/11/28.
  */
 public class FragmentTitleFactory {
     //创建集合
-    private static HashMap<String, Fragment> fragmentHashMap = new HashMap<>();
+    private static HashMap<HotTitlesBean.DataBean, Fragment> fragmentHashMap = new HashMap<>();
 
 
     //创建静态方法
-    public static Fragment getFragment(String title) {
+    public static Fragment getFragment(HotTitlesBean.DataBean dataBean) {
 
-        Fragment fragment = fragmentHashMap.get(title);
+        Fragment fragment = fragmentHashMap.get(dataBean);
         if (fragment != null) {
             return fragment;
         }
-        fragment = HotTitlesFragment.getTitleFragment(title);
+        if (HotTitlesFragment.getTitleFragment(dataBean) == null) {
+            fragment = new HotTitlesFragment();
+        } else {
+            fragment = HotTitlesFragment.getTitleFragment(dataBean);
+        }
 
-        fragmentHashMap.put(title, fragment);
+        fragmentHashMap.put(dataBean, fragment);
         return fragment;
     }
 }

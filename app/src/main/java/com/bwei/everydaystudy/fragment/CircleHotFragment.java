@@ -25,7 +25,11 @@ import com.bwei.everydaystudy.utils.UrlUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 import static com.bwei.everydaystudy.R.id.circleOutViewPager;
+import static com.bwei.everydaystudy.R.mipmap.hot;
+import static com.bwei.everydaystudy.R.mipmap.numb;
 
 /**
  * author by LiKe on 2017/1/13.
@@ -38,6 +42,8 @@ public class CircleHotFragment extends BaseFragment {
     private ViewPager circle_hotfm_item_viewPager;
     private TabLayout circle_hotfm_item_tabLayout;
     private HotTitlesBean hotTitlesBean;
+    ArrayList<String> titlesList = new ArrayList<>();
+    ArrayList<HotTitlesBean.DataBean> dataBeanList = new ArrayList<>();
 
     @Override
     public void onAttach(Context context) {
@@ -83,6 +89,8 @@ public class CircleHotFragment extends BaseFragment {
                 showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_SUCCESS);
                 Gson gson = new Gson();
                 hotTitlesBean = gson.fromJson(data, HotTitlesBean.class);
+                dataBeanList.add(new HotTitlesBean.DataBean(null,null,null,null,"推荐",null,null,null,null));
+                dataBeanList.addAll(hotTitlesBean.data);
                 initView();
             }
 
@@ -90,7 +98,7 @@ public class CircleHotFragment extends BaseFragment {
             public void setResulttError(int state) {
                 showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_ERROR);
             }
-        }.getData(UrlUtils.baseUrl,"api.php?c=circle&a=getRecommendTag",BaseData.NORMALTIME);
+        }.getData(UrlUtils.baseUrl, "api.php?c=circle&a=getRecommendTag", BaseData.NORMALTIME);
     }
 
     private void initView() {
@@ -98,17 +106,17 @@ public class CircleHotFragment extends BaseFragment {
         circle_hotfm_item_viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return FragmentTitleFactory.getFragment(hotTitlesBean.data.get(position).name);
+                return FragmentTitleFactory.getFragment(dataBeanList.get(position));
             }
 
             @Override
             public CharSequence getPageTitle(int position) {
-                return hotTitlesBean.data.get(position).name;
+                return dataBeanList.get(position).name;
             }
 
             @Override
             public int getCount() {
-                return hotTitlesBean.data.size();
+                return dataBeanList.size();
             }
         });
         //设置tabLayout和viewPager关联

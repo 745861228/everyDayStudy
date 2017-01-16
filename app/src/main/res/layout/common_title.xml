@@ -84,7 +84,8 @@
             app:tabSelectedTextColor="#ffffff"
             app:tabTextColor="#ffffff"
             android:layout_centerVertical="true"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"/>
 
     </com.zhy.autolayout.AutoRelativeLayout>
 

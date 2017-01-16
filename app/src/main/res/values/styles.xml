@@ -47,4 +47,9 @@
         <item name="android:backgroundDimEnabled">false</item>
     </style>
 
+
+    <!--TabLayout字体大小主题-->
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/quan_tablayout_tv</item>
+    </style>
 </resources>
