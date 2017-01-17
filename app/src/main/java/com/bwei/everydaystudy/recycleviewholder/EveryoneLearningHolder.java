@@ -1,16 +1,19 @@
 package com.bwei.everydaystudy.recycleviewholder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bwei.everydaystudy.CourseDetailsActivity;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseHolder;
 import com.bwei.everydaystudy.bean.HomeBean;
@@ -67,6 +70,15 @@ public class EveryoneLearningHolder extends BaseHolder<List<HomeBean.DataEntity.
                     recommend_tv_price.setTextColor(Color.RED);
                 }
                 return view;
+            }
+        });
+
+        everone_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent  =  new Intent(context, CourseDetailsActivity.class);
+                    intent.putExtra("cid",list.get(i).getCid()+"");
+                    context.startActivity(intent);
             }
         });
 

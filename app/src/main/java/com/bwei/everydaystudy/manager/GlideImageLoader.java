@@ -13,11 +13,7 @@ import com.youth.banner.loader.ImageLoader;
  */
 
 public class GlideImageLoader extends ImageLoader {
-    private final int size;
 
-    public GlideImageLoader(int size) {
-        this.size = size;
-    }
 
     @Override
     public void displayImage(final Context context, Object path, ImageView imageView) {

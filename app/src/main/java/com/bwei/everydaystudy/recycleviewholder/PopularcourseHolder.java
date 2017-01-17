@@ -1,15 +1,18 @@
 package com.bwei.everydaystudy.recycleviewholder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bwei.everydaystudy.CourseDetailsActivity;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseHolder;
 import com.bwei.everydaystudy.bean.HomeBean;
@@ -59,6 +62,15 @@ public class PopularcourseHolder extends BaseHolder<List<HomeBean.DataEntity.Hot
                 popularcourse_name.setText(list.get(i).getName());
                 popularcourse_title.setText(list.get(i).getTitle());
                 return view;
+            }
+        });
+
+        popilar_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent  =  new Intent(context, CourseDetailsActivity.class);
+                intent.putExtra("cid",list.get(i).getCid()+"");
+                context.startActivity(intent);
             }
         });
 

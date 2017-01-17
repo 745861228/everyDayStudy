@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bwei.everydaystudy.CarouselFigureActivity;
+import com.bwei.everydaystudy.CourseDetailsActivity;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseHolder;
 import com.bwei.everydaystudy.bean.HomeBean;
@@ -41,7 +42,7 @@ public class HomeFmHolder extends BaseHolder<List<HomeBean.DataEntity.SliderEnti
         for (int i = 0; i < list.size(); i++) {
             imgUrl.add(list.get(i).getImg());
         }
-        home_banner.setImageLoader(new GlideImageLoader(list.size()));
+        home_banner.setImageLoader(new GlideImageLoader());
         home_banner.setImages(imgUrl);
         home_banner.start();
         home_banner.setOnBannerClickListener(new OnBannerClickListener() {
@@ -49,10 +50,14 @@ public class HomeFmHolder extends BaseHolder<List<HomeBean.DataEntity.SliderEnti
             public void OnBannerClick(int position) {
                 if (position == 2 || position == 4) {
                     Intent intent = new Intent(context, CarouselFigureActivity.class);
-                    intent.putExtra("cid", list.get(position-1).getUrl());
+                    intent.putExtra("cid", list.get(position - 1).getUrl());
                     context.startActivity(intent);
                 }
-
+                if (position == 3 || position == 5) {
+                    Intent intent = new Intent(context, CourseDetailsActivity.class);
+                    intent.putExtra("cid", list.get(position - 1).getUrl());
+                    context.startActivity(intent);
+                }
             }
         });
     }
