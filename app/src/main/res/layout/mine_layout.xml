@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/mine_layout_top" />
+    <include layout="@layout/mine_layout_top"
+        android:id="@+id/noLoginUi"/>
     <include layout="@layout/mine_layout_bottom"/>
 
 </com.zhy.autolayout.AutoLinearLayout>

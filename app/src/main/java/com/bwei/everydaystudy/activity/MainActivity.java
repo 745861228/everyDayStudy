@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.base.BaseActivity;
 import com.bwei.everydaystudy.factory.FragmentFactory;
+import com.bwei.everydaystudy.fragment.MineFragment;
+import com.bwei.everydaystudy.utils.ToastUtil;
 import com.bwei.everydaystudy.view.LazyViewPager;
 
 public class MainActivity extends BaseActivity implements LazyViewPager.OnPageChangeListener {
@@ -19,7 +21,7 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
     private LazyViewPager main_lazyViewPager;
     private RadioGroup rb;
     private long mExitTime = 0;
-    private String[] titles = {"首页","课程分类","圈子","我的"};
+    private String[] titles = {"首页", "课程分类", "圈子", "我的"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,12 +118,18 @@ public class MainActivity extends BaseActivity implements LazyViewPager.OnPageCh
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 123 && resultCode == 111) {
+        MineFragment mineFragment = (MineFragment) FragmentFactory.getFragment("我的");
+        ToastUtil.show(this,"回调了");
+        if (resultCode == 111) {
             String screen_name = data.getStringExtra("screen_name");
             String profile_image_url = data.getStringExtra("profile_image_url");
-           // QQLogin(screen_name, profile_image_url);
-        }else if (requestCode == 123 && resultCode == 101){
-
+            mineFragment.upDataMessage(profile_image_url,screen_name);
+            ToastUtil.show(this,"QQ登陆成功");
+        } else if ( resultCode == 101) {
+            String user_big_log = data.getStringExtra("user_big_log");
+            String user_name = data.getStringExtra("user_name");
+            mineFragment.upDataMessage(user_big_log, user_name);
+            ToastUtil.show(this,"账号登陆成功");
         }
     }
 

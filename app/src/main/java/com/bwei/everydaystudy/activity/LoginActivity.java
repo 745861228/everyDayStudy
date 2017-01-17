@@ -127,17 +127,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Gson gson = new Gson();
                 LoginMessageBean loginMessageBean = gson.fromJson(data, LoginMessageBean.class);
                 if (loginMessageBean.getStatus() == 200) {
-                    toastMesage("登录成功！");
+                    toastMesage(loginMessageBean.getMsg());
                     Intent intent= new Intent();
                     intent.putExtra("user_name",loginMessageBean.getData().getUser_name());
                     intent.putExtra("user_big_log",loginMessageBean.getData().getUser_big_log());
                     setResult(101,intent);
+                    finish();
                 } else if (loginMessageBean.getStatus() == 201) {
                     my_sign_toast.setVisibility(View.VISIBLE);
-                    my_sign_toast.setText("密码不正确");
+                    my_sign_toast.setText(loginMessageBean.getMsg());
                 } else if (loginMessageBean.getStatus() == 202) {
                     my_sign_toast.setVisibility(View.VISIBLE);
-                    my_sign_toast.setText("账号不存在");
+                    my_sign_toast.setText(loginMessageBean.getMsg());
                 }
             }
 
@@ -157,8 +158,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             String screen_name = data.get("screen_name");
             String uid = data.get("uid");
             String profile_image_url = data.get("profile_image_url");
-
-            Toast.makeText(getApplicationContext(), "screen_name" + screen_name + " uid" + uid + " profile_image_url" + profile_image_url, Toast.LENGTH_SHORT).show();
             Intent xinxi = new Intent();
             xinxi.putExtra("screen_name", screen_name);
             xinxi.putExtra("profile_image_url", profile_image_url);

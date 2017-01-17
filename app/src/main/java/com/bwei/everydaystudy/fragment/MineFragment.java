@@ -20,6 +20,7 @@ import com.bwei.everydaystudy.activity.MessageActivity;
 import com.bwei.everydaystudy.activity.RedactActivity;
 import com.bwei.everydaystudy.activity.SettingActivity;
 import com.bwei.everydaystudy.activity.TicklingActivity;
+import com.zhy.autolayout.AutoLinearLayout;
 
 /**
  * author by LiKe on 2017/1/10.
@@ -37,6 +38,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout my_feedback;
     private RelativeLayout my_setting;
     private  RelativeLayout my_log_ll_show;
+    private AutoLinearLayout my_unlog_show;
+    private TextView my_unlog_tv1;
 
     @Nullable
     @Override
@@ -60,8 +63,13 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         my_feedback.setOnClickListener(this);
         my_setting = (RelativeLayout) view.findViewById(R.id.my_setting);//设置
         my_setting.setOnClickListener(this);
+        //登陆成功后显示界面
         my_log_ll_show = (RelativeLayout) view.findViewById(R.id.my_log_ll_show);
         my_log_ll_show.setOnClickListener(this);
+        my_unlog_tv1 = (TextView) view.findViewById(R.id.my_unlog_tv);
+
+        //未登陆时显示界面显示界面
+        my_unlog_show = (AutoLinearLayout) view.findViewById(R.id.my_unlog_show);
         return view;
     }
 
@@ -117,7 +125,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
     public void upDataMessage(String url,String userName){
         my_log_ll_show.setVisibility(View.VISIBLE);
+        my_unlog_show.setVisibility(View.VISIBLE);
         Glide.with(getActivity()).load(url).into(my_image);
-
+        my_unlog_tv1.setText(userName);
     }
 }
