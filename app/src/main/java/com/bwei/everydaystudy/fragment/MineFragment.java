@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,15 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bwei.everydaystudy.R;
 import com.bwei.everydaystudy.activity.CourseActivity;
 import com.bwei.everydaystudy.activity.LoginActivity;
 import com.bwei.everydaystudy.activity.MessageActivity;
+import com.bwei.everydaystudy.activity.RedactActivity;
 import com.bwei.everydaystudy.activity.SettingActivity;
 import com.bwei.everydaystudy.activity.TicklingActivity;
-import com.bwei.everydaystudy.utils.CommonUtils;
+import com.zhy.autolayout.AutoLinearLayout;
 
 /**
  * author by LiKe on 2017/1/10.
@@ -37,6 +38,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     private RelativeLayout my_feedback;
     private RelativeLayout my_setting;
     private  RelativeLayout my_log_ll_show;
+    private AutoLinearLayout my_unlog_show;
+    private TextView my_unlog_tv1;
 
     @Nullable
     @Override
@@ -60,7 +63,13 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         my_feedback.setOnClickListener(this);
         my_setting = (RelativeLayout) view.findViewById(R.id.my_setting);//设置
         my_setting.setOnClickListener(this);
+        //登陆成功后显示界面
         my_log_ll_show = (RelativeLayout) view.findViewById(R.id.my_log_ll_show);
+        my_log_ll_show.setOnClickListener(this);
+        my_unlog_tv1 = (TextView) view.findViewById(R.id.my_unlog_tv);
+
+        //未登陆时显示界面显示界面
+        my_unlog_show = (AutoLinearLayout) view.findViewById(R.id.my_unlog_show);
         return view;
     }
 
@@ -68,34 +77,24 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 123 && resultCode == 111) {
-            String screen_name = data.getStringExtra("screen_name");
-            String profile_image_url = data.getStringExtra("profile_image_url");
-            QQLogin(screen_name, profile_image_url);
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
-    private void QQLogin(String screen_name, String profile_image_url) {
-        if (!TextUtils.isEmpty(profile_image_url)) {
-            my_log_ll_show.setVisibility(View.VISIBLE);
-            CommonUtils.saveSp("profile_image_url", profile_image_url);
-            CommonUtils.saveSp("screen_name", screen_name);
-        } else {
-            my_log_ll_show.setVisibility(View.GONE);
-        }
-    }
+
+//    private void QQLogin(String screen_name, String profile_image_url) {
+//        if (!TextUtils.isEmpty(profile_image_url)) {
+//            my_log_ll_show.setVisibility(View.VISIBLE);
+//            CommonUtils.saveSp("profile_image_url", profile_image_url);
+//            CommonUtils.saveSp("screen_name", screen_name);
+//        } else {
+//            my_log_ll_show.setVisibility(View.GONE);
+//        }
+//    }
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
-            case  R.id.my_image:
-                break;
             case  R.id.My_top_log://立即登录
                 Intent intent=new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,123);
                 break;
             case R.id.my_myclass:  /*我的课程*/
                 Intent intent1=new Intent(getActivity(), CourseActivity.class);
@@ -113,6 +112,21 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 Intent intent3 = new Intent(getActivity(), SettingActivity.class);
                 startActivity(intent3);
                 break;
+            case R.id.my_log_ll_show:
+                Intent intent5=new Intent(getActivity(), RedactActivity.class);
+                startActivity(intent5);
+                break;
         }
+    }
+
+    /**
+     * 操作我的信息方法
+     */
+
+    public void upDataMessage(String url,String userName){
+        my_log_ll_show.setVisibility(View.VISIBLE);
+        my_unlog_show.setVisibility(View.VISIBLE);
+        Glide.with(getActivity()).load(url).into(my_image);
+        my_unlog_tv1.setText(userName);
     }
 }

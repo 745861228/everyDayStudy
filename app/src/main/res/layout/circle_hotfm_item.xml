@@ -10,10 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@mipmap/recommend_tab_bg"
+        app:tabIndicatorColor="@color/yellow"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/yellow"
-        app:tabTextColor="#ffffff"
-        app:tabIndicatorColor="@color/yellow"/>
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabTextColor="#ffffff" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/circle_hotfm_item_viewPager"

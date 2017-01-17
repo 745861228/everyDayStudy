@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+    <com.bwei.everydaystudy.view.MyListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#e4e3de"
+        android:choiceMode="singleChoice"
+        android:listSelector="#00000000"
+        android:scrollbars="none"></com.bwei.everydaystudy.view.MyListView>
+
+    <com.bwei.everydaystudy.view.MyListView
+        android:id="@+id/subListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#e4e3de"></com.bwei.everydaystudy.view.MyListView>
+</com.zhy.autolayout.AutoLinearLayout>

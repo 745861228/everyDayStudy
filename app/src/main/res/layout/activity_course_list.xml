@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bwei.everydaystudy.activity.CourseListActivity">
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:background="@color/red"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="课程列表"
+            android:textColor="@color/back"
+            android:textSize="38px" />
+
+        <ImageView
+            android:id="@+id/serch"
+            android:layout_width="70px"
+            android:layout_height="70px"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="30px"
+            android:src="@mipmap/glass" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="90px"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="260px"
+            android:layout_height="90px"
+
+            android:layout_weight="1"
+            android:background="@mipmap/label"
+            android:button="@null"
+            android:drawableRight="@mipmap/down"
+            android:gravity="center"
+
+            android:text="美妆美发"
+            android:textColor="@color/text"
+            android:textSize="30px" />
+
+        <RadioButton
+            android:id="@+id/rb_screening"
+            android:layout_width="260px"
+            android:layout_height="90px"
+            android:layout_weight="1"
+            android:background="@mipmap/label"
+            android:button="@null"
+            android:drawableRight="@mipmap/down"
+            android:gravity="center"
+            android:text="筛选"
+            android:textColor="@color/text"
+            android:textSize="30px" />
+
+        <RadioButton
+            android:id="@+id/rb_sorting"
+            android:layout_width="260px"
+            android:layout_height="90px"
+            android:layout_weight="1"
+            android:background="@mipmap/label"
+            android:button="@null"
+            android:drawableRight="@mipmap/down"
+            android:gravity="center"
+            android:text="排序"
+            android:textColor="@color/text"
+            android:textSize="30px" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#cccccc" />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+       >
+        <include
+            android:id="@+id/alllist"
+            layout="@layout/alllist_item"
+            android:visibility="gone"
+            />
+      <!--  <include
+            android:id="@+id/screening"
+            layout="@layout/screening_item"
+            android:visibility="gone"
+            />-->
+     <include
+            android:id="@+id/sorting"
+            layout="@layout/sorting_item"
+            android:visibility="gone"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

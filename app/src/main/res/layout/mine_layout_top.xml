@@ -12,11 +12,12 @@
         android:textSize="20sp"
         android:text="我的主页"
         />
+
     <com.zhy.autolayout.AutoLinearLayout
 
         android:id="@+id/my_top_ll"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="350px"
         android:background="@mipmap/my2"
         android:orientation="horizontal" >
 
@@ -30,17 +31,16 @@
             android:layout_gravity="center_vertical"
             android:padding="10dp"
             android:src="@mipmap/head" />
+
         <com.zhy.autolayout.AutoRelativeLayout
             android:visibility="gone"
+            android:layout_gravity="center"
             android:id="@+id/my_log_ll_show"
-            android:layout_gravity="center_vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <TextView
                 android:id="@+id/my_unlog_tv"
-                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
@@ -58,6 +58,7 @@
         </com.zhy.autolayout.AutoRelativeLayout>
 
         <com.zhy.autolayout.AutoLinearLayout
+            android:layout_marginTop="30px"
             android:id="@+id/my_unlog_show"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

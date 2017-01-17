@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="20dp"
+                android:paddingRight="40px"
                 android:src="@mipmap/back" />
 
             <TextView
@@ -38,12 +38,12 @@
 
     <com.zhy.autolayout.AutoFrameLayout
         android:layout_width="match_parent"
-        android:layout_height="42dp" >
+        android:layout_height="84px" >
 
         <RadioGroup
             android:id="@+id/rg_mycourse_studying"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="86px"
             android:orientation="horizontal" >
 
             <RadioButton
@@ -71,7 +71,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="1px"
             android:layout_gravity="bottom"
             android:background="@color/common_background_color" />
     </com.zhy.autolayout.AutoFrameLayout>

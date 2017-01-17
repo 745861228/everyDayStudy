@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayoutLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="40px"
+        android:text="免费"
+        android:textColor="@color/texts"
+        android:textSize="40px" />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cccccc" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="40px"
+        android:text="收费"
+        android:textColor="@color/texts"
+        android:textSize="40px" />
+
+</com.zhy.autolayout.AutoLinearLayoutLinearLayout>

@@ -6,8 +6,8 @@
 
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
     <ScrollView
@@ -20,24 +20,24 @@
 
 
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_myclass"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_iv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/mya" />
         <TextView
             android:id="@+id/my_tv1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
             android:layout_toRightOf="@id/my_iv1"
             android:layout_centerVertical="true"
             android:text="我的课程"
@@ -49,14 +49,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="24px"
             android:src="@mipmap/myrig" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:id="@+id/my_download"
         android:layout_width="fill_parent"
-        android:layout_height="44dp"
+        android:layout_height="88px"
         android:visibility="gone" >
         <ImageView
             android:id="@+id/my_down"
@@ -64,13 +64,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/myc" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40px"
+            android:layout_marginTop="20px"
             android:layout_toRightOf="@id/my_down"
             android:layout_centerVertical="true"
             android:text="离线下载"
@@ -82,36 +82,36 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="19dp"
+            android:layout_marginRight="28px"
             android:src="@mipmap/myrig" />
     </com.zhy.autolayout.AutoLinearLayout>
     <View
 
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
 
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_collect"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_iv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/myb" />
         <TextView
             android:id="@+id/my_tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
             android:layout_toRightOf="@id/my_iv3"
             android:layout_centerVertical="true"
             android:text="收藏"
@@ -123,28 +123,28 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="24px"
             android:src="@mipmap/myrig" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_youhui"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_image1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/coupon" />
         <TextView
             android:id="@+id/my_youhui_tv"
@@ -152,7 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/my_image1"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20px"
             android:text="优惠券"
             android:textColor="#333333"
             android:textSize="16sp" />
@@ -171,28 +171,28 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="24px"
             android:src="@mipmap/myrig" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_msg"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_iv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/myd" />
         <TextView
             android:id="@+id/my_tv3"
@@ -200,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/my_iv5"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20px"
             android:text="我的消息"
             android:textColor="#333333"
             android:textSize="16sp" />
@@ -216,22 +216,22 @@
     </com.zhy.autolayout.AutoRelativeLayout>
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_feedback"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_iv7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/mye" />
 
         <ImageView
@@ -240,14 +240,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="24px"
             android:src="@mipmap/myrig" />
 
         <TextView
             android:id="@+id/my_tv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20px"
             android:text="意见反馈"
             android:textColor="#333333"
             android:textSize="16sp"
@@ -256,29 +256,29 @@
     </com.zhy.autolayout.AutoRelativeLayout>
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
     <com.zhy.autolayout.AutoRelativeLayout
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="14px"
         android:id="@+id/my_setting"
         android:layout_width="fill_parent"
-        android:layout_height="44dp" >
+        android:layout_height="88px" >
         <ImageView
             android:id="@+id/my_iv9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp"
+            android:layout_marginLeft="38px"
             android:src="@mipmap/myf" />
         <TextView
             android:id="@+id/my_tv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
             android:layout_toRightOf="@id/my_iv9"
             android:layout_centerVertical="true"
             android:text="设置"
@@ -290,13 +290,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="24px"
             android:src="@mipmap/myrig" />
     </com.zhy.autolayout.AutoRelativeLayout>
     <View
         android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="19dp"
+        android:layout_height="1px"
+        android:layout_marginLeft="38px"
         android:background="#c9c9c9"
         />
         </com.zhy.autolayout.AutoLinearLayout>

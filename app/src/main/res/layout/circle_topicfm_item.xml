@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ScrollView
+        <com.bwei.everydaystudy.view.BounceScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:overScrollMode="never"
@@ -74,7 +74,7 @@
                 </com.zhy.autolayout.AutoLinearLayout>
 
             </com.zhy.autolayout.AutoLinearLayout>
-        </ScrollView>
+        </com.bwei.everydaystudy.view.BounceScrollView>
 
     </com.liaoinstan.springview.widget.SpringView>
 

@@ -38,7 +38,7 @@
         <meta-data
             android:name="com.bwei.everydaystudy.utils.MyGlideMode"
             android:value="GlideModule" />
-        <!--//QQ-->
+        <!-- //QQ -->
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="561cae6ae0f55abd990035bf" />
@@ -53,6 +53,7 @@
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
             <intent-filter>
                 <data android:scheme="tencent1105699976" />
+
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -91,6 +92,8 @@
         <activity android:name=".CourseDetailsActivity">
 
         </activity>
+        <activity android:name=".activity.RedactActivity"></activity>
+        <activity android:name=".activity.CourseListActivity"></activity>
     </application>
 
 </manifest>

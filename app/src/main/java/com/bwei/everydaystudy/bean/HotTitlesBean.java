@@ -1,12 +1,13 @@
 package com.bwei.everydaystudy.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * author by LiKe on 2017/1/15.
  */
 
-public class HotTitlesBean {
+public class HotTitlesBean implements Serializable{
 
     /**
      * code : 200
@@ -18,7 +19,19 @@ public class HotTitlesBean {
     public String msg;
     public List<DataBean> data;
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
+        public DataBean(String ctime, String hottopic, String ishot, String isrecommend, String name, String recommend_sort, String sort, String status, String tid) {
+            this.ctime = ctime;
+            this.hottopic = hottopic;
+            this.ishot = ishot;
+            this.isrecommend = isrecommend;
+            this.name = name;
+            this.recommend_sort = recommend_sort;
+            this.sort = sort;
+            this.status = status;
+            this.tid = tid;
+        }
+
         /**
          * ctime : 1466753392
          * hottopic : 0
@@ -30,6 +43,8 @@ public class HotTitlesBean {
          * status : 1
          * tid : 77
          */
+
+
 
         public String ctime;
         public String hottopic;
