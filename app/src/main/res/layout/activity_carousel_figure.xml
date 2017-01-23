@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_carousel_figure"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.liaoinstan.springview.widget.SpringView
+        android:id="@+id/carousel_springview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.bwei.everydaystudy.view.BounceScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/carousel_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="300px"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher" />
+                <TextView
+                    android:id="@+id/carousel_tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20px"
+                    android:text="国学之新华字典，带您进入国学的奇妙世界。"
+                    android:textSize="30px" />
+
+                <!--分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20px"
+                    android:background="#44000000" />
+                <TextView
+                    android:id="@+id/carousel_tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="30px"
+                    android:text="织围巾"
+                    android:textColor="#f00"
+                    android:textSize="40px" />
+                <!--分割线-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#44000000" />
+
+                <com.bwei.everydaystudy.view.MyListView
+                    android:id="@+id/carousel_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></com.bwei.everydaystudy.view.MyListView>
+            </com.zhy.autolayout.AutoLinearLayout>
+        </com.bwei.everydaystudy.view.BounceScrollView>
+    </com.liaoinstan.springview.widget.SpringView>
+
+</com.zhy.autolayout.AutoLinearLayout>
