@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/wunai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="230px"
+        android:src="@mipmap/wunai" />
+
+    <TextView
+        android:id="@+id/hint_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wunai"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40px"
+        android:text="小主，您还未登陆应用,"
+        android:textColor="@color/gray"
+        android:layout_marginLeft="20px"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goto_login_tv"
+        android:layout_toRightOf="@+id/hint_tv"
+        android:text="去登陆"
+        android:layout_below="@id/wunai"
+        android:layout_marginTop="40px"
+        android:textColor="@color/red"/>
+</com.zhy.autolayout.AutoRelativeLayout>

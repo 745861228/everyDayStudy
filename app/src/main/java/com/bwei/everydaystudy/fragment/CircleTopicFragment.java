@@ -1,6 +1,7 @@
 package com.bwei.everydaystudy.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bwei.everydaystudy.R;
+import com.bwei.everydaystudy.activity.TopicParticularsActivity;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.base.BaseFragment;
 import com.bwei.everydaystudy.bean.CircleAttentionBean;
@@ -20,12 +22,15 @@ import com.bwei.everydaystudy.utils.CommonUtils;
 import com.bwei.everydaystudy.utils.DividerItemDecoration;
 import com.bwei.everydaystudy.utils.LogUtils;
 import com.bwei.everydaystudy.utils.NetUtils;
+import com.bwei.everydaystudy.utils.ToastUtil;
+import com.bwei.everydaystudy.utils.UrlUtils;
 import com.bwei.everydaystudy.view.ShowingPager;
 
 import com.google.gson.Gson;
 import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
 import com.youth.banner.Banner;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -149,7 +154,7 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
     private void setHotCircleDatas(CircleAttentionBean circleAttentionBean) {
         List<CircleAttentionBean.DataBean.CircleBean> circleBeanList = circleAttentionBean.data.circle;
         //设置recyclerView布局管理
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -158,18 +163,28 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
         hotRecyclerView.setLayoutManager(linearLayoutManager);
         hotRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
 
-        hotRecyclerView.setAdapter(new CommonAdapter<CircleAttentionBean.DataBean.CircleBean>(getActivity(),R.layout.circletopicfm_rv_item,circleBeanList) {
+        hotRecyclerView.setAdapter(new CommonAdapter<CircleAttentionBean.DataBean.CircleBean>(getActivity(), R.layout.circletopicfm_rv_item, circleBeanList) {
 
             @Override
-            protected void convert(final ViewHolder holder, CircleAttentionBean.DataBean.CircleBean circleBean, int position) {
+            protected void convert(final ViewHolder holder, final CircleAttentionBean.DataBean.CircleBean circleBean, int position) {
                 ImageView n_small_img = holder.getView(R.id.n_small_img);
                 Glide.with(getActivity()).load(circleBean.n_small_img).into(n_small_img);
-                holder.setText(R.id.n_title_tv,circleBean.n_title);
-                holder.setText(R.id.n_brief_tv,circleBean.n_brief);
-                holder.setText(R.id.n_user_count_tv,circleBean.n_user_count+"人关注");
-                holder.setText(R.id.n_post_count_tv,circleBean.n_post_count+"帖子");
+                holder.setText(R.id.n_title_tv, circleBean.n_title);
+                holder.setText(R.id.n_brief_tv, circleBean.n_brief);
+                holder.setText(R.id.n_user_count_tv, circleBean.n_user_count + "人关注");
+                holder.setText(R.id.n_post_count_tv, circleBean.n_post_count + "帖子");
                 ImageView addAttention_img = holder.getView(R.id.addAttention_img);
                 addAttention_img.setVisibility(View.VISIBLE);
+                AutoLinearLayout parent_linearLayout = holder.getView(R.id.parent_linearLayout);
+                parent_linearLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getActivity(), TopicParticularsActivity.class);
+                        intent.putExtra("nid",circleBean.nid+"");
+                        getActivity().startActivity(intent);
+                    }
+                });
+
 
                 //点击删除
                 addAttention_img.setOnClickListener(new View.OnClickListener() {
@@ -177,12 +192,22 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
                     public void onClick(View view) {
                         //获取cookie
                         String cookie = CommonUtils.getString("cookie");
-                       // LogUtils.i("cookie*****",cookie);
+                        LogUtils.i("cookie",cookie);
+                        //判断是否为登陆状态
+                       // isLoginState();
                     }
                 });
             }
         });
     }
+
+
+    /**
+     * 判断是否为登陆状态
+     *
+     * @param
+     */
+
 
     /**
      * 设置轮播图

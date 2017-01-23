@@ -11,6 +11,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/red"
         android:orientation="horizontal" />
+
     <include
         android:id="@+id/showLoadError"
         layout="@layout/showingpage_load_error"
@@ -21,6 +22,10 @@
         layout="@layout/showingpage_loading"
         android:visibility="gone" />
 
+    <include
+        android:id="@+id/showNoLogin"
+        layout="@layout/showingpager_nologin"
+        android:visibility="gone" />
 
     <com.zhy.autolayout.AutoFrameLayout
         android:id="@+id/showFrameLayout"

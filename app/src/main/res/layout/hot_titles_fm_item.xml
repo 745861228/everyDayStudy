@@ -24,10 +24,10 @@
         android:layout_alignParentRight="true"
         android:layout_margin="60px"
         android:src="@mipmap/posting"
-        fab:fab_type="normal"
-        fab:fab_shadow="true"
         fab:fab_colorNormal="@color/red"
         fab:fab_colorPressed="@color/red"
-        fab:fab_colorRipple="@color/red"/>
+        fab:fab_colorRipple="@color/red"
+        fab:fab_shadow="true"
+        fab:fab_type="normal" />
 
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -79,15 +79,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
     }
 
 
-//    private void QQLogin(String screen_name, String profile_image_url) {
-//        if (!TextUtils.isEmpty(profile_image_url)) {
-//            my_log_ll_show.setVisibility(View.VISIBLE);
-//            CommonUtils.saveSp("profile_image_url", profile_image_url);
-//            CommonUtils.saveSp("screen_name", screen_name);
-//        } else {
-//            my_log_ll_show.setVisibility(View.GONE);
-//        }
-//    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId())

@@ -24,6 +24,7 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
     public static final int STATE_LOADING = 1;
     public static final int STATE_LOAD_ERROR = 2;
     public static final int STATE_LOAD_SUCCESS = 3;
+    public static final int STATE_NOLOGIN = 4;
     private final Context context;
 
     //定义当前状态
@@ -36,6 +37,7 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
     private IResetShowingPageListener iResetShowingPageListener;
     private final LayoutParams params;
     private final View titleView;
+    private final View showNoLogin;
 
     public ShowingPager(Context context) {
         super(context);
@@ -48,6 +50,7 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
         showLoadError = view.findViewById(R.id.showLoadError);
         showLoading = view.findViewById(R.id.showLoading);
         showFrameLayout = (FrameLayout) view.findViewById(R.id.showFrameLayout);
+        showNoLogin = view.findViewById(R.id.showNoLogin);
         this.addView(view,params);
 
         //查找重置按钮
@@ -128,7 +131,7 @@ public abstract class ShowingPager extends FrameLayout implements View.OnClickLi
      */
     public enum StateType {
         //请求类型
-        STATE_LOADING(1), STATE_LOAD_ERROR(2), STATE_LOAD_SUCCESS(3);
+        STATE_LOADING(1), STATE_LOAD_ERROR(2), STATE_LOAD_SUCCESS(3),STATE_NOLOGIN(4);
         private final int currentState;
 
         StateType(int currentState) {
