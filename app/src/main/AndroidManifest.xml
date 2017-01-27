@@ -89,14 +89,12 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity android:name=".CarouselFigureActivity" />
-        <activity android:name=".CourseDetailsActivity">
+        <activity android:name=".CourseDetailsActivity"/>
 
-        </activity>
-        <activity android:name=".activity.RedactActivity"></activity>
-        <activity android:name=".activity.CourseListActivity"></activity>
-        <activity android:name=".activity.RedactActivity" />
-        <activity android:name=".activity.CourseListActivity" />
-        <activity android:name=".activity.TopicParticularsActivity"></activity>
+
+        <activity android:name=".activity.RedactActivity"/>
+        <activity android:name=".activity.CourseListActivity"/>
+        <activity android:name=".activity.TopicParticularsActivity"/>
     </application>
 
 </manifest>

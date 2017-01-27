@@ -3,6 +3,7 @@ package com.bwei.everydaystudy.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +25,7 @@ import com.bwei.everydaystudy.utils.LogUtils;
 import com.bwei.everydaystudy.utils.NetUtils;
 import com.bwei.everydaystudy.utils.ToastUtil;
 import com.bwei.everydaystudy.utils.UrlUtils;
+import com.bwei.everydaystudy.view.MyHeader;
 import com.bwei.everydaystudy.view.ShowingPager;
 
 import com.google.gson.Gson;
@@ -91,10 +93,12 @@ public class CircleTopicFragment extends BaseFragment implements SpringView.OnFr
         //设置下拉刷新，上拉加载
         circleTopicFm_springView.setListener(this);
         //设置springView默认头和尾
-        circleTopicFm_springView.setHeader(new DefaultHeader(getActivity()));
+        circleTopicFm_springView.setHeader(new MyHeader());
         // home_springView.setFooter(new DefaultFooter(getActivity()));
         //设置springView头部隐藏
         circleTopicFm_springView.setType(SpringView.Type.FOLLOW);
+
+
     }
 
     @Override

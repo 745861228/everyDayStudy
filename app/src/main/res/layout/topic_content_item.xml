@@ -6,7 +6,7 @@
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="250px"
         android:background="#EEEEEE">
 
 
@@ -28,7 +28,6 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="30px"
-            android:layout_marginStart="21dp"
             android:layout_toEndOf="@+id/user_image"
             android:orientation="vertical">
 
