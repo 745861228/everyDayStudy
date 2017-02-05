@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\studiodemo\\everyDayStudy\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\libarm.so",
+        "source": "E:\\studiodemo\\everyDayStudy\\vitamio\\build\\intermediates\\bundles\\debug\\res\\raw\\libarm.so"
+    },
+    {
         "merged": "D:\\Users\\LiKe\\AndroidStudioProjects\\everyDayStudy\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\libarm.so",
         "source": "D:\\Users\\LiKe\\AndroidStudioProjects\\everyDayStudy\\vitamio\\build\\intermediates\\bundles\\debug\\res\\raw\\libarm.so"
     }
