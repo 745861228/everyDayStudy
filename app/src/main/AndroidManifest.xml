@@ -44,12 +44,12 @@
             android:value="561cae6ae0f55abd990035bf" />
 
         <activity android:name=".activity.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
             <intent-filter>
                 <data android:scheme="tencent1105699976" />
@@ -87,14 +87,25 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
         <activity android:name=".CarouselFigureActivity" />
-        <activity android:name=".CourseDetailsActivity"/>
+        <activity android:name=".CourseDetailsActivity" />
+        <activity android:name=".activity.RedactActivity" />
+        <activity android:name=".activity.CourseListActivity" />
+        <activity android:name=".activity.TopicParticularsActivity" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation">
 
 
-        <activity android:name=".activity.RedactActivity"/>
-        <activity android:name=".activity.CourseListActivity"/>
-        <activity android:name=".activity.TopicParticularsActivity"/>
+        </activity>
+
+        <span style="white-space:pre"></span>
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

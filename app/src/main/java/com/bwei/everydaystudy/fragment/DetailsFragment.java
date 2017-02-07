@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ListView;
@@ -54,6 +55,7 @@ public class DetailsFragment extends Fragment {
         details_layout_catalog = (AutoLinearLayout) view.findViewById(R.id.details_layout_catalog);
         details_fragment_lv = (ListView) view.findViewById(R.id.details_fragment_lv);
         details_fragment_tv_title = (TextView) view.findViewById(R.id.details_fragment_tv_title);
+
         return view;
     }
 
@@ -115,6 +117,12 @@ public class DetailsFragment extends Fragment {
                         lv_tv_title.setText(nodes.get(i).getSections_isfree()+"-"+nodes.get(i).getSections_sort());
                         lv_tv_name.setText(nodes.get(i).getSections_name());
                         return view;
+                    }
+                });
+                details_fragment_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                     }
                 });
             }

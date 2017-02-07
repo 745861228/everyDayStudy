@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bwei.everydaystudy.R;
+import com.bwei.everydaystudy.application.MyApplication;
 import com.bwei.everydaystudy.base.BaseActivity;
 import com.bwei.everydaystudy.base.BaseData;
 import com.bwei.everydaystudy.bean.TopicParticularsBean;
@@ -73,7 +74,7 @@ public class TopicParticularsActivity extends BaseActivity  {
                 //解析json并复制
                 Gson gson = new Gson();
                 TopicParticularsBean topicParticularsBean = gson.fromJson(data, TopicParticularsBean.class);
-                //为控件复制
+                //为控件赋值
                 setViewDatas(topicParticularsBean);
             }
 
@@ -91,9 +92,9 @@ public class TopicParticularsActivity extends BaseActivity  {
      */
     private void setViewDatas(TopicParticularsBean topicParticularsBean) {
         title_text.setText(topicParticularsBean.data.n_title);
-        Glide.with(this).load(topicParticularsBean.data.n_big_img).into(image_bg);
+        Glide.with(MyApplication.getContext()).load(topicParticularsBean.data.n_big_img).into(image_bg);
         image_bg.setScaleType(ImageView.ScaleType.FIT_XY);
-        Glide.with(this).load(topicParticularsBean.data.n_small_img).into(user_image);
+        Glide.with(MyApplication.getContext()).load(topicParticularsBean.data.n_small_img).into(user_image);
         n_title_tv.setText(topicParticularsBean.data.n_title);
         n_brief_tv.setText(topicParticularsBean.data.n_brief);
         n_user_count_cb.setText(topicParticularsBean.data.n_user_count + "");

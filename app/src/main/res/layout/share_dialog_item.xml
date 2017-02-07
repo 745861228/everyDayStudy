@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400px"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:paddingBottom="30px"
+    android:paddingTop="20px">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10px">
+
+        <Button
+            android:id="@+id/wechat"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawablePadding="10px"
+            android:drawableTop="@drawable/wechat_selector"
+            android:gravity="center"
+            android:text="微信" />
+
+        <Button
+            android:id="@+id/wxFriendCircle"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawablePadding="10px"
+            android:drawableTop="@drawable/firend_circle_selector"
+            android:gravity="center"
+            android:text="朋友圈" />
+
+        <Button
+            android:id="@+id/qzone"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawablePadding="10px"
+            android:drawableTop="@drawable/qqcircle_selector"
+            android:gravity="center"
+            android:text="QQ空间" />
+
+        <Button
+            android:id="@+id/wb"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawablePadding="10px"
+            android:drawableTop="@drawable/sina_selector"
+            android:gravity="center"
+            android:text="微博" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20px">
+
+        <Button
+            android:id="@+id/qq"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:drawableTop="@drawable/qq_selector"
+            android:gravity="center"
+            android:text="QQ" />
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+</com.zhy.autolayout.AutoLinearLayout>

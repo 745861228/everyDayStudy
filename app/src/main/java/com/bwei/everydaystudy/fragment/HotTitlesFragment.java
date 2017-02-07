@@ -25,7 +25,9 @@ import com.bwei.everydaystudy.bean.LableBean;
 import com.bwei.everydaystudy.bean.SendCodeBean;
 import com.bwei.everydaystudy.utils.DividerItemDecoration;
 import com.bwei.everydaystudy.utils.LogUtils;
+import com.bwei.everydaystudy.utils.ShowDialog;
 import com.bwei.everydaystudy.utils.UrlUtils;
+import com.bwei.everydaystudy.view.MyHeader;
 import com.bwei.everydaystudy.view.ShowingPager;
 import com.google.gson.Gson;
 import com.liaoinstan.springview.container.DefaultFooter;
@@ -76,7 +78,7 @@ public class HotTitlesFragment extends BaseFragment implements SpringView.OnFres
         //设置下拉刷新，上拉加载
         hot_titles_fm_item_springView.setListener(this);
         //设置springView默认头和尾
-        hot_titles_fm_item_springView.setHeader(new DefaultHeader(getActivity()));
+        hot_titles_fm_item_springView.setHeader(new MyHeader());
         hot_titles_fm_item_springView.setFooter(new DefaultFooter(getActivity()));
         //设置springView头部隐藏
         hot_titles_fm_item_springView.setType(SpringView.Type.FOLLOW);
@@ -189,8 +191,6 @@ public class HotTitlesFragment extends BaseFragment implements SpringView.OnFres
                 image_right.setScaleType(ImageView.ScaleType.FIT_XY);//右边图
                 Gson gson = new Gson();
 
-
-
                 ImageView large_image = holder.getView(R.id.large_image);                               //一张大图
                 large_image.setScaleType(ImageView.ScaleType.FIT_XY);
                 //获取图片数据
@@ -236,6 +236,14 @@ public class HotTitlesFragment extends BaseFragment implements SpringView.OnFres
                 holder.setText(R.id.share_tv, dataBean.p_sharecount);
                 holder.setText(R.id.message_tv, dataBean.p_replycount);
 
+                //分享按钮
+                AutoLinearLayout share_linearLayout = holder.getView(R.id.share_linearLayout);
+                share_linearLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new ShowDialog(getActivity());
+                    }
+                });
             }
         };
     }
@@ -281,4 +289,10 @@ public class HotTitlesFragment extends BaseFragment implements SpringView.OnFres
         hot_titles_fm_item_springView.scrollTo(0, 0);
     }
 
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        commonAdapter = null;
+    }
 }

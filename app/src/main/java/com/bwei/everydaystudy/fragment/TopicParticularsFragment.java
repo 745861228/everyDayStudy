@@ -24,8 +24,10 @@ import com.bwei.everydaystudy.bean.HotTitlesContentBean;
 import com.bwei.everydaystudy.bean.LableBean;
 import com.bwei.everydaystudy.interfaces.IResetShowingPageListener;
 import com.bwei.everydaystudy.utils.UrlUtils;
+import com.bwei.everydaystudy.view.MyHeader;
 import com.bwei.everydaystudy.view.ShowingPager;
 import com.google.gson.Gson;
+import com.liaoinstan.springview.container.DefaultFooter;
 import com.liaoinstan.springview.container.DefaultHeader;
 import com.liaoinstan.springview.widget.SpringView;
 import com.melnykov.fab.FloatingActionButton;
@@ -39,12 +41,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import recyclerview.CommonAdapter;
 import recyclerview.base.ViewHolder;
 
+import static android.os.Build.VERSION_CODES.M;
+
 
 /**
  * author by LiKe on 2017/1/17.
  */
 
-public  class TopicParticularsFragment extends BaseFragment implements SpringView.OnFreshListener,AppBarLayout.OnOffsetChangedListener {
+public class TopicParticularsFragment extends BaseFragment implements SpringView.OnFreshListener, AppBarLayout.OnOffsetChangedListener {
 
     private boolean isOnline = true;
     private View view;
@@ -55,7 +59,6 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
     private boolean isRefreshLoad = true;
     private CommonAdapter<HotTitlesContentBean.DataBean> commonAdapter;
     private FloatingActionButton floatingActionButton;
-
 
 
     /**
@@ -78,7 +81,7 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
         new BaseData() {
             @Override
             public void setResultData(String data) {
-                if (data!=null){
+                if (data != null) {
                     Gson gson = new Gson();
                     HotTitlesContentBean hotTitlesContentBean = gson.fromJson(data, HotTitlesContentBean.class);
                     //设置recyclerView适配器
@@ -91,7 +94,7 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
             public void setResulttError(int state) {
                 showingPager.setCurrentState(ShowingPager.StateType.STATE_LOAD_ERROR);
             }
-        }.postData(false, false, UrlUtils.baseUrl, "api.php?c=circle&a=getCirclePostList", hashMap, BaseData.NOTIME);
+        }.postData(false, false, UrlUtils.baseUrl, "api.php?c=circle&a=getCirclePostList", hashMap, BaseData.NORMALTIME);
 
     }
 
@@ -110,7 +113,6 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
         }
         if (commonAdapter == null) {
             setRecyclerViewAdapter(refreshLoadList);
-            hotRecyclerView.setAdapter(commonAdapter);
         } else {
             commonAdapter.notifyDataSetChanged();
         }
@@ -119,7 +121,10 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
     }
 
     private void setRecyclerViewAdapter(final List<HotTitlesContentBean.DataBean> refreshLoadList) {
-         commonAdapter =  new CommonAdapter<HotTitlesContentBean.DataBean>(getActivity(), R.layout.hottitlesfm_rv_item, refreshLoadList) {
+        if (refreshLoadList==null){
+            return;
+        }
+        commonAdapter = new CommonAdapter<HotTitlesContentBean.DataBean>(getActivity(), R.layout.hottitlesfm_rv_item, refreshLoadList) {
             @Override
             protected void convert(ViewHolder holder, HotTitlesContentBean.DataBean dataBean, int position) {
                 //分割线
@@ -185,18 +190,19 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
                 //holder.setText(R.id.p_content_tv,dataBean.p_content);               //设置content
                 //  holder.setText(R.id.p_tids_tv, dataBean.p_tids);                     //设置tids
 
-                /*标签*/
+              /*  *//*标签*//*
                 TextView p_tids_tv = holder.getView(R.id.p_tids_tv);
                 String p_tids = dataBean.p_tids;
                 Spanned spanned = Html.fromHtml(p_tids);
                 LableBean[] lableBeen = gson.fromJson(spanned.toString(), LableBean[].class);
-                p_tids_tv.setText("#" + lableBeen[0].getTname() + "#");
+                p_tids_tv.setText("#" + lableBeen[0].getTname() + "#");*/
 
                 holder.setText(R.id.dianzan_tv, dataBean.p_dig);
                 holder.setText(R.id.share_tv, dataBean.p_sharecount);
                 holder.setText(R.id.message_tv, dataBean.p_replycount);
             }
         };
+        hotRecyclerView.setAdapter(commonAdapter);
     }
 
 
@@ -232,6 +238,10 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
                 initDatas();
             }
         });
+        TopicParticularsActivity fragmentActivity = (TopicParticularsActivity) getActivity();
+        if (fragmentActivity.appBarLayout != null) {
+            fragmentActivity.appBarLayout.addOnOffsetChangedListener(this);
+        }
     }
 
     /**
@@ -245,20 +255,38 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
         //设置下拉刷新，上拉加载
         topicactivity__springView.setListener(this);
         //设置springView默认头和尾
-        topicactivity__springView.setHeader(new DefaultHeader(getActivity()));
-        // home_springView.setFooter(new DefaultFooter(getActivity()));
+        topicactivity__springView.setHeader(new MyHeader());
+        topicactivity__springView.setFooter(new DefaultFooter(getActivity()));
         //设置springView头部隐藏
         topicactivity__springView.setType(SpringView.Type.FOLLOW);
     }
 
     @Override
     public void onRefresh() {
-
+        page = 1;
+        isRefreshLoad = true;
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initDatas();
+                lode();
+            }
+        }, 2000);
     }
 
     @Override
     public void onLoadmore() {
-
+        page++;
+        isRefreshLoad = false;
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                initDatas();
+                lode();
+            }
+        }, 2000);
     }
 
 
@@ -292,7 +320,6 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
 
-
         /**
          * 这段代码是为了解决springview 和tabBarLayout中嵌套时上下滚动冲突
          */
@@ -302,7 +329,7 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
             if (fragmentActivity.appBarLayout != null) {
                 fragmentActivity.appBarLayout.addOnOffsetChangedListener(this);
             }
-        }else if (isVisibleToUser && this.getContext() == null) {
+        } else if (isVisibleToUser && this.getContext() == null) {
             //viewpager中第一页加载的太早,getContext还拿不到,做个延迟
             new Handler().post(new Runnable() {
 
@@ -315,7 +342,7 @@ public  class TopicParticularsFragment extends BaseFragment implements SpringVie
                     }
                     if (TopicParticularsFragment.this.getContext() != null) {
 
-                       // MyApplication application = (MyApplication) TopicParticularsFragment.this.getContext().getApplicationContext();
+                        // MyApplication application = (MyApplication) TopicParticularsFragment.this.getContext().getApplicationContext();
 
                         TopicParticularsActivity fragmentActivity = (TopicParticularsActivity) getActivity();
                         if (fragmentActivity.appBarLayout != null) {

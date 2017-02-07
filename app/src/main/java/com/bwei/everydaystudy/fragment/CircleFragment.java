@@ -70,7 +70,7 @@ public class CircleFragment extends BaseFragment {
     private void initView() {
         LinearLayout linearLayout = (LinearLayout) title_tabLayout.getChildAt(0);
         linearLayout.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
-        linearLayout.setDividerPadding(15);
+        linearLayout.setDividerPadding(CommonUtils.dip2px(20));
         linearLayout.setDividerDrawable(ContextCompat.getDrawable(getActivity(),
                 R.drawable.layout_divider_vertical));
         //设置viewpager适配器

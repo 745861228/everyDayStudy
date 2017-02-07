@@ -19,6 +19,5 @@ public class GlideImageLoader extends ImageLoader {
     public void displayImage(final Context context, Object path, ImageView imageView) {
         //Glide 加载图片简单用法
         Glide.with(context).load(path).into(imageView);
-
     }
 }

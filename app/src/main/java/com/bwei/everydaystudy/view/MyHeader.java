@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bwei.everydaystudy.R;
+import com.bwei.everydaystudy.utils.CommonUtils;
 import com.liaoinstan.springview.container.BaseHeader;
 import com.liaoinstan.springview.widget.SpringView;
 
@@ -89,7 +90,7 @@ public class MyHeader extends BaseHeader implements SpringView.DragHander{
      */
     @Override
     public int getDragLimitHeight(View rootView) {
-        return 100;
+        return CommonUtils.dip2px(80);
     }
 
     /**
@@ -99,7 +100,7 @@ public class MyHeader extends BaseHeader implements SpringView.DragHander{
      */
     @Override
     public int getDragMaxHeight(View rootView) {
-        return 200;
+        return 400;
     }
 
     /**

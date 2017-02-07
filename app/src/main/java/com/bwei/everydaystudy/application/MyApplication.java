@@ -9,6 +9,8 @@ import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.zhy.autolayout.config.AutoLayoutConifg;
 
+import org.xutils.x;
+
 /**
  * author by LiKe on 2017/1/10.
  */
@@ -33,7 +35,9 @@ public class MyApplication extends Application {
         handler = new Handler();
         //获取主线程号
         mainThreadId = Process.myTid();
-    }
+
+        x.Ext.init(this);
+}
 
     public static int getMainThreadId() {
         return mainThreadId;
